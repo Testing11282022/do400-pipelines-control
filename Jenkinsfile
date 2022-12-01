@@ -4,7 +4,7 @@ node {
 label 'nodejs'
 }
 }
-stage('Run Tests') {
+stages('Run Tests') {
 parallel {
 stage('Backend Tests') {
 steps {
