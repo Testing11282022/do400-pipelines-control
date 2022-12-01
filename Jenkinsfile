@@ -1,9 +1,4 @@
 pipeline {
-agent {
-node {
-label 'nodejs'
-}
-}
 stages {
     parallel{
 stage('Backend Tests') {
