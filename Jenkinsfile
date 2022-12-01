@@ -1,14 +1,19 @@
-node('nodejs') {
-stage('Checkout') {
-git branch: 'main',
-url: 'https://github.com/YOUR_GITHUB_USER/do400-pipelines-control'
+pipeline {
+agent {
+node {
+label 'nodejs'
 }
+}
+stages {
 stage('Backend Tests') {
+steps {
 sh 'node ./backend/test.js'
 }
+}
 stage('Frontend Tests') {
-294
-DO400-OCP4.6-en-6-20221025Chapter 5 | Authoring Pipelines
+steps {
 sh 'node ./frontend/test.js'
+}
+}
 }
 }
