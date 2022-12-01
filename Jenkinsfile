@@ -1,8 +1,11 @@
 pipeline {
-...output omitted...
+agent {
+node {
+label 'nodejs'
+}
+}
 stages {
-stage('Run Tests') {
-parallel {
+    parallel{
 stage('Backend Tests') {
 steps {
 sh 'node ./backend/test.js'
@@ -13,7 +16,6 @@ steps {
 sh 'node ./frontend/test.js'
 }
 }
-}
-}
+    }
 }
 }
